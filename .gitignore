@@ -1,0 +1,9 @@
+node_modules/
+.tmp/
+coverage/
+artifacts/
+/dist
+npm-debug.log
+.nyc_output
+test/tools/trigger-appveyor-tests.sh
+logo/*.png

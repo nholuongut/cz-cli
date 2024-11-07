@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "github>nholuongut/nholuongut-renovate-config"
+  ]
+}

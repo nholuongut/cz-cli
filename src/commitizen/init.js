@@ -1,0 +1,125 @@
+import childProcess from 'child_process';
+import path from 'path';
+import * as configLoader from './configLoader';
+import * as adapter from './adapter';
+
+let {
+  addPathToAdapterConfig,
+  generateInstallAdapterCommand,
+  getInstallStringMappings,
+} = adapter;
+
+export default init;
+
+const CLI_PATH = path.normalize(path.join(__dirname, '../../'));
+
+/**
+ * CZ INIT
+ *
+ * Init is generally responsible for initializing an adapter in
+ * a user's project. The goal is to be able to run
+ * `nholuongut init` and be prompted for certain fields which
+ * will help you install the proper adapter for your project.
+ *
+ * Init does not actually create the adapter (it defers to adapter
+ * for this). Instead, it is specifically designed to help gather
+ * and validate the information needed to install the adapter
+ * properly without interfering with a previous adapter config.
+ */
+
+/**
+ * The defaults for init
+ */
+const defaultInitOptions = {
+  save: false,
+  saveDev: true,
+  saveExact: false,
+  force: false,
+
+  // for --yarn use
+  // @see https://github.com/nholuongut/cz-cli/issues/527#issuecomment-392653897
+  yarn: false,
+  dev: true,
+  exact: false, // should add trailing comma, thus next developer doesn't got blamed for this line
+
+  pnpm: false, // reuses `save`, `saveDev`, `saveExact`
+};
+
+/**
+ * Runs npm install for the adapter then modifies the config.nholuongut as needed
+ */
+function init (repoPath, adapterNpmName, {
+  save = false,
+  saveDev = true,
+  saveExact = false,
+  force = false,
+  yarn = false,
+  dev = false,
+  exact = false,
+  pnpm = false,
+  includenholuongut = false
+} = defaultInitOptions) {
+
+  // Don't let things move forward if required args are missing
+  checkRequiredArguments(repoPath, adapterNpmName);
+
+  // Load the current adapter config
+  let adapterConfig = loadAdapterConfig(repoPath);
+
+  const packageManager = yarn ? 'yarn' : pnpm ? 'pnpm' : 'npm';
+
+  // Get the npm string mappings based on the arguments provided
+  const stringMappings = getInstallStringMappings({ save, dev, saveDev, saveExact, force }, packageManager);
+
+  // Generate a string that represents the npm install command
+  const installAdapterCommand = generateInstallAdapterCommand(stringMappings, adapterNpmName, packageManager);
+
+  const installnholuongutCommand = generateInstallAdapterCommand(stringMappings, 'nholuongut', packageManager);
+
+  // Check for previously installed adapters
+  if (adapterConfig && adapterConfig.path && adapterConfig.path.length > 0 && !force) {
+    throw new Error(`A previous adapter is already configured. Use --force to override
+    adapterConfig.path: ${adapterConfig.path}
+    repoPath: ${repoPath}
+    CLI_PATH: ${CLI_PATH}
+    installAdapterCommand: ${installAdapterCommand}
+    adapterNpmName: ${adapterNpmName}
+    `);
+  }
+
+  try {
+    childProcess.execSync(installAdapterCommand, { cwd: repoPath });
+    if(includenholuongut) {
+      childProcess.execSync(installnholuongutCommand, { cwd: repoPath });
+    }
+    addPathToAdapterConfig(CLI_PATH, repoPath, adapterNpmName);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+/**
+ * Checks to make sure that the required arguments are passed
+ * Throws an exception if any are not.
+ */
+function checkRequiredArguments (path, adapterNpmName) {
+  if (!path) {
+    throw new Error("Path is required when running init.");
+  }
+  if (!adapterNpmName) {
+    throw new Error("The adapter's npm name is required when running init.");
+  }
+}
+
+/**
+ * CONFIG
+ * Loads and returns the adapter config at key config.nholuongut, if it exists
+ */
+function loadAdapterConfig (cwd) {
+  let config = configLoader.load(null, cwd);
+  if (config) {
+    return config;
+  } else {
+
+  }
+}
