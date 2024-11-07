@@ -258,30 +258,6 @@ npm install --save-dev company-commit
 ./node_modules/.bin/company-commit
 ```
 
-## Adapters
-
-We know that every project and build process has different requirements, so we've tried to keep nholuongut open for extension. You can do this by choosing from any of the pre-built adapters or even by building your own. Here are some of the great adapters available to you:
-
-- [cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog)
-- [cz-conventional-changelog-for-jira](https://www.npmjs.com/package/@digitalroute/cz-conventional-changelog-for-jira)
-- [cz-conventional-changelog-with-jiraid-detection](https://www.npmjs.com/package/cz-conventional-changelog-with-jiraid-detection)
-- [cz-jira-smart-commit](https://www.npmjs.com/package/cz-jira-smart-commit)
-- [@endemolshinegroup/cz-jira-smart-commit](https://github.com/EndemolShineGroup/cz-jira-smart-commit)
-- [@endemolshinegroup/cz-github](https://github.com/EndemolShineGroup/cz-github)
-- [rb-conventional-changelog](https://www.npmjs.com/package/rb-conventional-changelog)
-- [@mapbox/cz-mapbox-changelog](https://www.npmjs.com/package/@mapbox/cz-mapbox-changelog)
-- [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
-- [cz-commitlint](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/cz-commitlint)
-- [commitlint](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/prompt)
-- [vscode-nholuongut](https://github.com/KnisterPeter/vscode-nholuongut)
-- [cz-emoji](https://github.com/ngryman/cz-emoji)
-- [cz-adapter-eslint](https://www.npmjs.com/package/cz-adapter-eslint)
-- [commitiquette](https://github.com/martinmcwhorter/commitiquette)
-- [cz-format-extension](https://github.com/tyankatsu0105/cz-format-extension)
-- [cz-emoji-conventional](https://www.npmjs.com/package/cz-emoji-conventional)
-- [cz-git](https://github.com/Zhengqbbb/cz-git)
-- [cz-vinyl](https://github.com/Exlint/cz-vinyl)
-
 To create an adapter, just fork one of these great adapters and modify it to suit your needs. We pass you an instance of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js/), but you can capture input using whatever means necessary. Just call the `commit` callback with a string and we'll be happy. Publish it to npm, and you'll be all set!
 
 ## Retrying failed commits
@@ -322,40 +298,18 @@ We accomplish this by letting you define which adapter you'd like to use in your
 - [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) – Generate a changelog from conventional commit history
 - [commitlint](https://github.com/conventional-changelog/commitlint) - Lint commit messages
 
-## Authors and Contributors
 
-@JimTheDev (Jim Cummins, author)
-@kentcdodds
-@accraze
-@kytwb
-@Den-dp
+# 🚀 I'm are always open to your feedback.  Please contact as bellow information:
+### [Contact ]
+* [Name: nho Luong]
+* [Skype](luongutnho_skype)
+* [Github](https://github.com/nholuongut/)
+* [Linkedin](https://www.linkedin.com/in/nholuong/)
+* [Email Address](luongutnho@hotmail.com)
 
-Special thanks to @stevelacy, whose [gulp-git](https://www.npmjs.com/package/gulp-git) project makes nholuongut possible.
+![](https://i.imgur.com/waxVImv.png)
+![](Donate.png)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nholuong)
 
-## Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://opencollective.com/nholuongut#section-contributors"><img src="https://opencollective.com/nholuongut/contributors.svg?width=890&button=false" /></a>
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/nholuongut#backer)]
-
-<a href="https://opencollective.com/nholuongut#category-BUDGET" target="_blank"><img src="https://opencollective.com/nholuongut/backers.svg?width=890"></a>
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/nholuongut#sponsor)]
-
-<a href="https://opencollective.com/nholuongut/sponsor/0/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/1/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/2/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/3/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/4/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/5/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/6/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/7/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/8/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/nholuongut/sponsor/9/website" target="_blank"><img src="https://opencollective.com/nholuongut/sponsor/9/avatar.svg"></a>
-
-[nholuongut-friendly]: #making-your-repo-nholuongut-friendly
+# License
+* Nho Luong (c). All Rights Reserved.🌟
